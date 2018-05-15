@@ -1,0 +1,32 @@
+{
+  "name": "@dwd/parrot",
+  "version": "0.1.5",
+  "description": "",
+  "main": "bin/index.js",
+  "bin": {
+    "parrot": "bin/index.js"
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "engines": {
+    "node": ">=8.0"
+  },
+  "author": "whirring",
+  "license": "ISC",
+  "dependencies": {
+    "@types/ncp": "^2.0.1",
+    "@types/ora": "^1.3.4",
+    "colors": "^1.2.5",
+    "commander": "^2.15.1",
+    "inquirer": "^5.2.0",
+    "ncp": "^2.0.0",
+    "ora": "^2.1.0",
+    "webpack": "^4.8.3",
+    "webpack-cli": "^2.1.3"
+  }
+}
