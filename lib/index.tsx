@@ -35,8 +35,8 @@ commander
 commander.on('--help', function(){
     console.log('\n Examples:');
     console.log('');
-    console.log('  $ parrot -h');
-    console.log('  $ parrot init parrot-demo ');
+    console.log('  $ snake -h');
+    console.log('  $ snake init snake-demo ');
     console.log('');
   });
 
@@ -49,7 +49,7 @@ help()
 const release = async() => {
   const nodeVersion = execSync("node -v", { encoding: "utf8" });
   if (process.argv.length === 2) {
-    execSync('parrot -h')
+    execSync('snake -h')
   }
   if (!compareVersion(nodeVersion)) {
     console.log('Please make sure the node version is above 8.0'.red);

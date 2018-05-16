@@ -1,17 +1,17 @@
 
-## parrot
+## snake
 
 `a tool for generation webpack project`
 
 install
 ```
-npm install -g @dwd/parrot
+npm install -g snake-demo
 ```
 
 Usage
 
 ```
-parrot init <project>
+snake init <project>
 ```
 
 API
@@ -19,7 +19,7 @@ API
 init  `<project>`
 
 ```
-parrot init parrot-demo
+snake init snake-demo
 ```
 
 view `<filename>`
@@ -27,7 +27,7 @@ view `<filename>`
 generate a react component at src/views, if hasn't views directory, it will create it
 
 ```
-parrot view Test
+snake view Test
 ```
 
 
