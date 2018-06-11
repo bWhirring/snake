@@ -2,7 +2,12 @@ const path = require("path");
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ManifestPlugin = require('webpack-manifest-plugin');
-const { publicPath, filename, template, favicon } = require("./package.json").config
+const {
+  publicPath,
+  filename,
+  template,
+  favicon
+} = require("./package.json").config
 
 module.exports = {
   mode: "production",
@@ -16,8 +21,7 @@ module.exports = {
     extensions: [".js", ".jsx", ".js", ".json"]
   },
   module: {
-    rules: [
-      {
+    rules: [{
         test: /\.(js|jsx)/,
         loader: 'babel-loader'
       },
@@ -30,21 +34,26 @@ module.exports = {
         test: /\.less$/,
         exclude: path.resolve(__dirname, './node_modules'),
         use: [{
-            loader: "style-loader" // creates style nodes from JS strings
+          loader: "style-loader" // creates style nodes from JS strings
         }, {
-            loader: "css-loader", // translates CSS into CommonJS
-            options: {
-              modules: true,
-              importLoaders: 1,
-              localIdentName: "[name]__[local]___[hash:base64:5]",
-            }
-        },{
-            loader: "less-loader", // compiles Less to CSS
-            options: {
-              javascriptEnabled: true
-            }
+          loader: "css-loader", // translates CSS into CommonJS
+          options: {
+            modules: true,
+            importLoaders: 1,
+            localIdentName: "[name]__[local]___[hash:base64:5]",
+          }
         }, {
-          loader: 'postcss-loader'
+          loader: "less-loader", // compiles Less to CSS
+          options: {
+            javascriptEnabled: true
+          }
+        }, {
+          loader: 'postcss-loader',
+          options: {
+            config: {
+              path: 'postcss.config.js'
+            }
+          }
         }]
       }
     ]
