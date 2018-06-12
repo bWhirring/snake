@@ -69,7 +69,7 @@ function help() {
 }
 help();
 var release = function () { return __awaiter(_this, void 0, void 0, function () {
-    var nodeVersion, argv2, argv3, projectName, reactMode, currentPath, directory, viewName;
+    var nodeVersion, argv2, argv3, projectName, reactMode, currentPath, directory;
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0:
@@ -108,7 +108,6 @@ var release = function () { return __awaiter(_this, void 0, void 0, function () 
                 return [3 /*break*/, 7];
             case 6:
                 if (argv2 === 'view') {
-                    viewName = argv3;
                     generate_1.viewTemplate(argv3);
                 }
                 _a.label = 7;
@@ -121,3 +120,4 @@ release().catch(function (err) {
     process.exit();
 });
 commander.parse(process.argv);
+//# sourceMappingURL=index.js.map

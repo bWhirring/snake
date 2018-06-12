@@ -113,3 +113,4 @@ function viewTemplate(name) {
     });
 }
 exports.viewTemplate = viewTemplate;
+//# sourceMappingURL=generate.js.map

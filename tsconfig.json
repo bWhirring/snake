@@ -5,18 +5,13 @@
     "lib": [
       "es2015"
     ],
-    "watch": true,
     "outDir": "./bin",
-    "sourceMap": false,
+    "sourceMap": true,
     "module": "commonjs",
     "moduleResolution": "node",
     "isolatedModules": false,
-    "jsx": "react",
-    "experimentalDecorators": true,
-    "noImplicitAny": true,
-    "preserveConstEnums": true,
-    "suppressImplicitAnyIndexErrors": true,
-    "allowJs": true
+    "declaration": true,
+    "suppressImplicitAnyIndexErrors": true
   },
   "include": [
     "./lib/**/*",

@@ -1,8 +1,7 @@
 #!/usr/bin/env node
 import * as commander from "commander";
 import * as fs from 'fs'
-import { exec, execSync } from "child_process";
-import * as ncp from 'ncp';
+import { execSync } from "child_process";
 import * as colors from 'colors'
 import * as path from 'path'
 const version = require("../package.json").version;
@@ -73,7 +72,6 @@ const release = async() => {
     const directory = reactMode.flag ? currentPath + '/src/react-router' : currentPath + '/src/redux'
     dir(directory, projectName)
   } else if (argv2 === 'view') {
-    let viewName = argv3;
     viewTemplate(argv3)
   }
 }

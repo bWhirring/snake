@@ -172,3 +172,4 @@ function renderView(filename, viewsPath) {
     console.log((filename + ".jsx has been rendered at " + viewsPath).green);
 }
 exports.renderView = renderView;
+//# sourceMappingURL=util.js.map

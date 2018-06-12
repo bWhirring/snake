@@ -1,9 +1,7 @@
 #!/usr/bin/env node
 
 import * as ncp from 'ncp';
-import * as path from 'path';
 import * as ora from 'ora';
-import { exec, execSync } from "child_process";
 import * as fs from 'fs';
 const inquirer = require("inquirer");
 
