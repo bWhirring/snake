@@ -39,7 +39,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var fs = require("fs");
 var path = require("path");
 var inquirer = require("inquirer");
-var colors = require('colors');
+var colors = require("colors");
 /**
  * if hasn't projectName ,set one
  */
@@ -49,21 +49,21 @@ function setProjectName(dir) {
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0: return [4 /*yield*/, inquirer.prompt({
-                        name: 'projectName',
-                        message: 'input project name',
+                        name: "projectName",
+                        message: "input project name"
                     })];
                 case 1:
                     projectName = (_a.sent()).projectName;
-                    global['projectName'] = projectName;
+                    global["projectName"] = projectName;
                     if (!!projectName) return [3 /*break*/, 3];
-                    console.log('\n please input dir'.green + '\n');
+                    console.log("\n please input dir".green + "\n");
                     return [4 /*yield*/, setProjectName()];
                 case 2:
                     _a.sent();
                     return [3 /*break*/, 6];
                 case 3:
                     if (!fs.existsSync(projectName)) return [3 /*break*/, 5];
-                    console.log('\n the dir has exists, please input another one'.green + '\n');
+                    console.log("\n the dir has exists, please input another one".green + "\n");
                     return [4 /*yield*/, setProjectName()];
                 case 4:
                     _a.sent();
@@ -81,24 +81,24 @@ function setFileName(dir) {
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
-                    viewsPath = path.resolve(__dirname, '../src/views/');
+                    viewsPath = path.resolve(__dirname, "../src/views/");
                     return [4 /*yield*/, inquirer.prompt({
-                            name: 'filename',
-                            message: 'input file name',
+                            name: "filename",
+                            message: "input file name"
                         })];
                 case 1:
                     filename = (_a.sent()).filename;
-                    filename = filename.split('.')[0];
-                    global['filename'] = filename;
+                    filename = filename.split(".")[0];
+                    global["filename"] = filename;
                     if (!!filename) return [3 /*break*/, 3];
-                    console.log('\n please input dir'.green + '\n');
+                    console.log("\n please input dir".green + "\n");
                     return [4 /*yield*/, setFileName()];
                 case 2:
                     _a.sent();
                     return [3 /*break*/, 6];
                 case 3:
                     if (!fs.existsSync(viewsPath + "/" + filename + ".js")) return [3 /*break*/, 5];
-                    console.log('\n the dir has exists, please input another one'.green + '\n');
+                    console.log("\n the dir has exists, please input another one".green + "\n");
                     return [4 /*yield*/, setFileName()];
                 case 4:
                     _a.sent();
@@ -118,16 +118,19 @@ function mode() {
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0: return [4 /*yield*/, inquirer.prompt({
-                        name: 'flag',
-                        message: 'select a mode',
-                        type: 'list',
-                        choices: [{
-                                name: 'react + react-router',
-                                value: true,
-                            }, {
-                                name: 'react + react-router + redux',
-                                value: false,
-                            }]
+                        name: "flag",
+                        message: "select a mode",
+                        type: "list",
+                        choices: [
+                            {
+                                name: "react + react-router",
+                                value: true
+                            },
+                            {
+                                name: "react + react-router + redux",
+                                value: false
+                            }
+                        ]
                     })];
                 case 1: return [2 /*return*/, _a.sent()];
             }
@@ -140,7 +143,8 @@ exports.mode = mode;
  * @param version
  */
 function compareVersion(version) {
-    return version.slice(1, 2) >= "8";
+    console.log(version.split(".")[0].slice(1));
+    return Number(version.split(".")[0].slice(1)) >= 8;
 }
 exports.compareVersion = compareVersion;
 function createViewsDir() {
@@ -149,8 +153,8 @@ function createViewsDir() {
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0: return [4 /*yield*/, inquirer.prompt({
-                        name: 'views',
-                        message: 'input project name',
+                        name: "views",
+                        message: "input project name"
                     })];
                 case 1:
                     views = (_a.sent()).views;

@@ -1,23 +1,23 @@
 #!/usr/bin/env node
-import * as fs from 'fs'
-import * as path from 'path';
+import * as fs from "fs";
+import * as path from "path";
 const inquirer = require("inquirer");
-const colors = require('colors');
+const colors = require("colors");
 
 /**
  * if hasn't projectName ,set one
  */
 export async function setProjectName(dir?: string) {
   const { projectName } = await inquirer.prompt({
-    name: 'projectName',
-    message: 'input project name',
+    name: "projectName",
+    message: "input project name"
   });
-  global['projectName'] = projectName
+  global["projectName"] = projectName;
   if (!projectName) {
-    console.log('\n please input dir'.green + '\n');
+    console.log("\n please input dir".green + "\n");
     await setProjectName();
   } else if (fs.existsSync(projectName)) {
-    console.log('\n the dir has exists, please input another one'.green + '\n');
+    console.log("\n the dir has exists, please input another one".green + "\n");
     await setProjectName();
   } else {
     return projectName;
@@ -25,18 +25,18 @@ export async function setProjectName(dir?: string) {
 }
 
 export async function setFileName(dir?: string) {
-  const viewsPath = path.resolve(__dirname, '../src/views/');
+  const viewsPath = path.resolve(__dirname, "../src/views/");
   let { filename } = await inquirer.prompt({
-    name: 'filename',
-    message: 'input file name',
+    name: "filename",
+    message: "input file name"
   });
-  filename = filename.split('.')[0];
-  global['filename'] = filename
+  filename = filename.split(".")[0];
+  global["filename"] = filename;
   if (!filename) {
-    console.log('\n please input dir'.green + '\n');
+    console.log("\n please input dir".green + "\n");
     await setFileName();
   } else if (fs.existsSync(`${viewsPath}/${filename}.js`)) {
-    console.log('\n the dir has exists, please input another one'.green + '\n');
+    console.log("\n the dir has exists, please input another one".green + "\n");
     await setFileName();
   } else {
     return filename;
@@ -48,17 +48,20 @@ export async function setFileName(dir?: string) {
  */
 export async function mode() {
   return await inquirer.prompt({
-    name: 'flag',
-    message: 'select a mode',
-    type: 'list',
-    choices: [{
-      name: 'react + react-router',
-      value: true,
-    }, {
-      name: 'react + react-router + redux',
-      value: false,
-    }]
-  })
+    name: "flag",
+    message: "select a mode",
+    type: "list",
+    choices: [
+      {
+        name: "react + react-router",
+        value: true
+      },
+      {
+        name: "react + react-router + redux",
+        value: false
+      }
+    ]
+  });
 }
 
 /**
@@ -66,13 +69,13 @@ export async function mode() {
  * @param version
  */
 export function compareVersion(version: string) {
-  return version.slice(1,2) >= "8";
+  return Number(version.split(".")[0].slice(1)) >= 8;
 }
 
 export async function createViewsDir() {
   const { views } = await inquirer.prompt({
-    name: 'views',
-    message: 'input project name',
+    name: "views",
+    message: "input project name"
   });
   console.log(views);
 }
@@ -82,18 +85,18 @@ export async function createViewsDir() {
  * @param filename
  * @param viewsPath
  */
-export function renderView(filename:string, viewsPath: string) {
-  const name = filename.slice(0,1).toUpperCase() + filename.slice(1);
-  fs.writeFileSync(`${viewsPath}/${filename}.jsx`,
-`import React from 'react'
+export function renderView(filename: string, viewsPath: string) {
+  const name = filename.slice(0, 1).toUpperCase() + filename.slice(1);
+  fs.writeFileSync(
+    `${viewsPath}/${filename}.jsx`,
+    `import React from 'react'
 
 export default class ${name} extends React.PureComponent {
   render() {
     return ${name}
   }
 }
-  `);
+  `
+  );
   console.log(`${filename}.jsx has been rendered at ${viewsPath}`.green);
 }
-
-
