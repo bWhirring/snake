@@ -143,7 +143,6 @@ exports.mode = mode;
  * @param version
  */
 function compareVersion(version) {
-    console.log(version.split(".")[0].slice(1));
     return Number(version.split(".")[0].slice(1)) >= 8;
 }
 exports.compareVersion = compareVersion;
