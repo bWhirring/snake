@@ -103,7 +103,7 @@ var release = function () { return __awaiter(_this, void 0, void 0, function () 
                 projectName = projectName || global['projectName'];
                 fs.mkdirSync(projectName);
                 currentPath = path.resolve(__dirname, '..');
-                directory = reactMode.flag ? currentPath + '/src/react-router' : currentPath + '/src/redux';
+                directory = currentPath + util_1.type(reactMode.flag);
                 generate_1.dir(directory, projectName);
                 return [3 /*break*/, 7];
             case 6:

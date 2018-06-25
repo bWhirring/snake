@@ -1,0 +1,43 @@
+{
+  "name": "ts-react",
+  "version": "1.0.0",
+  "description": "typescript react demo",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server --hot --watch --history-api-fallback",
+    "build": "webpack --config webpack.production.js"
+  },
+  "keywords": [
+    "typescript",
+    "react"
+  ],
+  "author": "whirring",
+  "license": "MIT",
+  "dependencies": {
+    "@types/react": "^16.4.1",
+    "@types/react-dom": "^16.0.6",
+    "@types/react-router-dom": "^4.2.7",
+    "awesome-typescript-loader": "^5.2.0",
+    "less": "^3.0.4",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "react-router-dom": "^4.3.1",
+    "typescript": "^2.9.2"
+  },
+  "devDependencies": {
+    "@types/react-css-modules": "^4.6.1",
+    "autoprefixer": "^8.6.3",
+    "clean-webpack-plugin": "^0.1.19",
+    "css-loader": "^0.28.11",
+    "less-loader": "^4.1.0",
+    "postcss-loader": "^2.1.5",
+    "react-css-modules": "^4.7.3",
+    "react-hot-loader": "^4.3.3",
+    "source-map-loader": "^0.2.3",
+    "style-loader": "^0.21.0",
+    "webpack": "^4.12.1",
+    "webpack-cli": "^3.0.8",
+    "webpack-dev-server": "^3.1.4",
+    "webpack-manifest-plugin": "^2.0.3"
+  }
+}

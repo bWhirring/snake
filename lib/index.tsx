@@ -7,10 +7,9 @@ import * as path from 'path'
 const version = require("../package.json").version;
 import {
   setProjectName,
-  setFileName,
   mode,
+  type,
   compareVersion,
-  createViewsDir,
 } from './util'
 import {
   dir,
@@ -69,7 +68,7 @@ const release = async() => {
     projectName = projectName || global['projectName'];
     fs.mkdirSync(projectName);
     const currentPath = path.resolve(__dirname, '..')
-    const directory = reactMode.flag ? currentPath + '/src/react-router' : currentPath + '/src/redux'
+    const directory =  currentPath + type(reactMode.flag);
     dir(directory, projectName)
   } else if (argv2 === 'view') {
     viewTemplate(argv3)

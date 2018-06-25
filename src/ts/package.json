@@ -1,0 +1,17 @@
+{
+  "name": "ts-demo",
+  "version": "1.0.0",
+  "description": "ts demo",
+  "main": "index.js",
+  "scripts": {
+    "start": "tsc"
+  },
+  "keywords": [
+    "typescript"
+  ],
+  "author": "whirring",
+  "license": "MIT",
+  "dependencies": {
+    "typescript": "^2.9.2"
+  }
+}

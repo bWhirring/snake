@@ -124,12 +124,20 @@ function mode() {
                         choices: [
                             {
                                 name: "react + react-router",
-                                value: true
+                                value: "react"
                             },
                             {
                                 name: "react + react-router + redux",
-                                value: false
-                            }
+                                value: "redux"
+                            },
+                            {
+                                name: "typescript",
+                                value: "ts"
+                            },
+                            {
+                                name: "typescript + react",
+                                value: "ts-react"
+                            },
                         ]
                     })];
                 case 1: return [2 /*return*/, _a.sent()];
@@ -139,6 +147,19 @@ function mode() {
 }
 exports.mode = mode;
 /**
+ * file directory
+ * @param mode
+ */
+function type(mode) {
+    return {
+        'react': '/src/react-router',
+        'redux': '/src/redux',
+        'ts': '/src/ts',
+        'ts-react': '/src/ts-react'
+    }[mode];
+}
+exports.type = type;
+/**
  * node version need > 8
  * @param version
  */
@@ -146,24 +167,6 @@ function compareVersion(version) {
     return Number(version.split(".")[0].slice(1)) >= 8;
 }
 exports.compareVersion = compareVersion;
-function createViewsDir() {
-    return __awaiter(this, void 0, void 0, function () {
-        var views;
-        return __generator(this, function (_a) {
-            switch (_a.label) {
-                case 0: return [4 /*yield*/, inquirer.prompt({
-                        name: "views",
-                        message: "input project name"
-                    })];
-                case 1:
-                    views = (_a.sent()).views;
-                    console.log(views);
-                    return [2 /*return*/];
-            }
-        });
-    });
-}
-exports.createViewsDir = createViewsDir;
 /**
  * render view
  * @param filename

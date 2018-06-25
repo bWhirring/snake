@@ -5,17 +5,17 @@
     "lib": [
       "es2015"
     ],
-    "outDir": "./bin",
+    "outDir": "./dist",
     "sourceMap": true,
     "module": "commonjs",
+    "watch": true,
     "moduleResolution": "node",
     "isolatedModules": false,
     "declaration": true,
     "jsx": "react",
-    "watch": true,
     "suppressImplicitAnyIndexErrors": true
   },
   "include": [
-    "./lib/**/*",
+    "./src/**/*",
   ]
 }

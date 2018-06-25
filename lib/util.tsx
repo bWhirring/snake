@@ -54,14 +54,35 @@ export async function mode() {
     choices: [
       {
         name: "react + react-router",
-        value: true
+        value: "react"
       },
       {
         name: "react + react-router + redux",
-        value: false
-      }
+        value: "redux"
+      },
+      {
+        name: "typescript",
+        value: "ts"
+      },
+      {
+        name: "typescript + react",
+        value: "ts-react"
+      },
     ]
   });
+}
+
+/**
+ * file directory
+ * @param mode
+ */
+export function type(mode: string) {
+  return {
+    'react': '/src/react-router',
+    'redux': '/src/redux',
+    'ts': '/src/ts',
+    'ts-react': '/src/ts-react'
+  }[mode]
 }
 
 /**
@@ -70,14 +91,6 @@ export async function mode() {
  */
 export function compareVersion(version: string) {
   return Number(version.split(".")[0].slice(1)) >= 8;
-}
-
-export async function createViewsDir() {
-  const { views } = await inquirer.prompt({
-    name: "views",
-    message: "input project name"
-  });
-  console.log(views);
 }
 
 /**
