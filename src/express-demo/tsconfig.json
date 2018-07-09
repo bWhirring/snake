@@ -6,7 +6,7 @@
       "es6", "dom"
     ],
     "types": [
-      "node"
+      "reflect-metadata"
     ],
     "outDir": "./dist",
     "sourceMap": true,
@@ -14,8 +14,9 @@
     "watch": true,
     "moduleResolution": "node",
     "isolatedModules": false,
-    "experimentalDecorators": true,
     "declaration": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
     "suppressImplicitAnyIndexErrors": true
   },
   "include": [

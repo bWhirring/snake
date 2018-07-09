@@ -138,6 +138,10 @@ function mode() {
                                 name: "typescript + react",
                                 value: "ts-react"
                             },
+                            {
+                                name: "express+inversify",
+                                value: "express"
+                            }
                         ]
                     })];
                 case 1: return [2 /*return*/, _a.sent()];
@@ -152,10 +156,11 @@ exports.mode = mode;
  */
 function type(mode) {
     return {
-        'react': '/src/react-router',
-        'redux': '/src/redux',
-        'ts': '/src/ts',
-        'ts-react': '/src/ts-react'
+        react: "/src/react-router",
+        redux: "/src/redux",
+        ts: "/src/ts",
+        "ts-react": "/src/ts-react",
+        express: "/src/express-demo"
     }[mode];
 }
 exports.type = type;

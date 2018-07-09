@@ -1,0 +1,22 @@
+{
+  "name": "express-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "tsc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.3",
+    "inversify": "^4.13.0",
+    "inversify-express-utils": "^6.1.0",
+    "reflect-metadata": "^0.1.12",
+    "typescript": "^2.9.2"
+  },
+  "devDependencies": {
+    "@types/express": "^4.16.0"
+  }
+}

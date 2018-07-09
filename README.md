@@ -1,9 +1,9 @@
-
 ## snake
 
-`a tool for generation webpack project`
+`a tool for generation front project, includes react、typescript、express+inversify`
 
 install
+
 ```
 npm install -g snake-demo
 ```
@@ -16,7 +16,7 @@ snake init <project>
 
 API
 
-init  `<project>`
+init `<project>`
 
 ```
 snake init snake-demo
@@ -29,5 +29,3 @@ generate a react component at src/views, if hasn't views directory, it will crea
 ```
 snake view Test
 ```
-
-

@@ -68,6 +68,10 @@ export async function mode() {
         name: "typescript + react",
         value: "ts-react"
       },
+      {
+        name: "express+inversify",
+        value: "express"
+      }
     ]
   });
 }
@@ -78,11 +82,12 @@ export async function mode() {
  */
 export function type(mode: string) {
   return {
-    'react': '/src/react-router',
-    'redux': '/src/redux',
-    'ts': '/src/ts',
-    'ts-react': '/src/ts-react'
-  }[mode]
+    react: "/src/react-router",
+    redux: "/src/redux",
+    ts: "/src/ts",
+    "ts-react": "/src/ts-react",
+    express: "/src/express-demo"
+  }[mode];
 }
 
 /**
