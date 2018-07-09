@@ -12,6 +12,7 @@
   "author": "whirring",
   "license": "MIT",
   "dependencies": {
+    "@types/node": "^10.5.2",
     "typescript": "^2.9.2"
   }
 }

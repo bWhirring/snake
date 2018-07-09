@@ -5,6 +5,9 @@
     "lib": [
       "es2015"
     ],
+    "types": [
+      "node"
+    ],
     "outDir": "./dist",
     "sourceMap": true,
     "module": "commonjs",
