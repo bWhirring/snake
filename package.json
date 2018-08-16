@@ -1,9 +1,14 @@
 {
   "name": "snake-demo",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "description": "a tool for generation front project, includes react、typescript、express+inversify",
   "keywords": [
-    "webpack", "redux", "react-router", "express", "inversify", "typescript"
+    "webpack",
+    "redux",
+    "react-router",
+    "express",
+    "inversify",
+    "typescript"
   ],
   "maintainers": [{
     "name": "whirring"

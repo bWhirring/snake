@@ -48,19 +48,19 @@ commander
     .version(version, "-V, --version")
     .usage("[Options] | [Commands] <file>");
 commander
-    .command('init')
-    .description('generation a webpack project')
-    .option('dir');
+    .command("init")
+    .description("generation a webpack project")
+    .option("dir");
 commander
-    .command('view')
-    .description('generation a react component')
-    .option('<file>');
-commander.on('--help', function () {
-    console.log('\n Examples:');
-    console.log('');
-    console.log('  $ snake -h');
-    console.log('  $ snake init snake-demo ');
-    console.log('');
+    .command("view")
+    .description("generation a react component")
+    .option("<file>");
+commander.on("--help", function () {
+    console.log("\n Examples:");
+    console.log("");
+    console.log("  $ snake -h");
+    console.log("  $ snake init snake-demo ");
+    console.log("");
 });
 function help() {
     commander.parse(process.argv);
@@ -68,22 +68,22 @@ function help() {
         return commander.help();
 }
 help();
-var release = function () { return __awaiter(_this, void 0, void 0, function () {
+exports.release = function () { return __awaiter(_this, void 0, void 0, function () {
     var nodeVersion, argv2, argv3, projectName, reactMode, currentPath, directory;
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0:
                 nodeVersion = child_process_1.execSync("node -v", { encoding: "utf8" });
                 if (process.argv.length === 2) {
-                    child_process_1.execSync('snake -h');
+                    child_process_1.execSync("snake -h");
                 }
                 if (!util_1.compareVersion(nodeVersion)) {
-                    console.log('Please make sure the node version is above 8.0'.red);
+                    console.log("Please make sure the node version is above 8.0".red);
                     process.exit();
                 }
                 argv2 = process.argv[2];
                 argv3 = process.argv[3];
-                if (!(argv2 === 'init')) return [3 /*break*/, 6];
+                if (!(argv2 === "init")) return [3 /*break*/, 6];
                 projectName = argv3;
                 if (!!projectName) return [3 /*break*/, 2];
                 return [4 /*yield*/, util_1.setProjectName()];
@@ -92,7 +92,7 @@ var release = function () { return __awaiter(_this, void 0, void 0, function () 
                 return [3 /*break*/, 4];
             case 2:
                 if (!fs.existsSync(projectName)) return [3 /*break*/, 4];
-                console.log('\n the dir has exists, please input another one'.green + '\n');
+                console.log("\n the dir has exists, please input another one".green + "\n");
                 return [4 /*yield*/, util_1.setProjectName()];
             case 3:
                 projectName = _a.sent();
@@ -100,14 +100,14 @@ var release = function () { return __awaiter(_this, void 0, void 0, function () 
             case 4: return [4 /*yield*/, util_1.mode()];
             case 5:
                 reactMode = _a.sent();
-                projectName = projectName || global['projectName'];
+                projectName = projectName || global["projectName"];
                 fs.mkdirSync(projectName);
-                currentPath = path.resolve(__dirname, '..');
+                currentPath = path.resolve(__dirname, "..");
                 directory = currentPath + util_1.type(reactMode.flag);
                 generate_1.dir(directory, projectName);
                 return [3 /*break*/, 7];
             case 6:
-                if (argv2 === 'view') {
+                if (argv2 === "view") {
                     generate_1.viewTemplate(argv3);
                 }
                 _a.label = 7;
@@ -115,7 +115,7 @@ var release = function () { return __awaiter(_this, void 0, void 0, function () 
         }
     });
 }); };
-release().catch(function (err) {
+exports.release().catch(function (err) {
     console.error(err);
     process.exit();
 });
