@@ -95,7 +95,7 @@ export function type(mode: string) {
  * @param version
  */
 export function compareVersion(version: string) {
-  return Number(version.split(".")[0].slice(1)) >= 8;
+  return Number(version.split(".")[0]) >= 8;
 }
 
 /**

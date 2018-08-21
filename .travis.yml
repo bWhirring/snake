@@ -1,0 +1,13 @@
+dist: trusty
+language: node_js
+cache:
+  directories:
+    - node_modules
+node_js:
+  - 8.0.0
+  - 9.0.0
+  - 10.0.0
+install:
+  - npm install
+script:
+  - npm test

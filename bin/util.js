@@ -169,7 +169,7 @@ exports.type = type;
  * @param version
  */
 function compareVersion(version) {
-    return Number(version.split(".")[0].slice(1)) >= 8;
+    return Number(version.split(".")[0]) >= 8;
 }
 exports.compareVersion = compareVersion;
 /**
